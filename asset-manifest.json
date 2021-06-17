@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/blog-app-project/static/css/main.1635e87c.chunk.css",
+    "main.js": "/blog-app-project/static/js/main.a27fab4c.chunk.js",
+    "main.js.map": "/blog-app-project/static/js/main.a27fab4c.chunk.js.map",
+    "runtime-main.js": "/blog-app-project/static/js/runtime-main.011a5543.js",
+    "runtime-main.js.map": "/blog-app-project/static/js/runtime-main.011a5543.js.map",
+    "static/js/2.38a4abec.chunk.js": "/blog-app-project/static/js/2.38a4abec.chunk.js",
+    "static/js/2.38a4abec.chunk.js.map": "/blog-app-project/static/js/2.38a4abec.chunk.js.map",
+    "index.html": "/blog-app-project/index.html",
+    "static/css/main.1635e87c.chunk.css.map": "/blog-app-project/static/css/main.1635e87c.chunk.css.map",
+    "static/js/2.38a4abec.chunk.js.LICENSE.txt": "/blog-app-project/static/js/2.38a4abec.chunk.js.LICENSE.txt",
+    "static/media/blog.7e6674a5.png": "/blog-app-project/static/media/blog.7e6674a5.png",
+    "static/media/joker.1cf1a27e.png": "/blog-app-project/static/media/joker.1cf1a27e.png",
+    "static/media/loading.c9a75b06.png": "/blog-app-project/static/media/loading.c9a75b06.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.011a5543.js",
+    "static/js/2.38a4abec.chunk.js",
+    "static/css/main.1635e87c.chunk.css",
+    "static/js/main.a27fab4c.chunk.js"
+  ]
+}
