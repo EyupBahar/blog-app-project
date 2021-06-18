@@ -17,7 +17,7 @@ export const createUser = async (
   email,
   password,
   displayName,
-  photo,
+  photo,    
   history
 ) => {
   try {

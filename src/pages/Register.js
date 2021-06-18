@@ -10,6 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { createUser } from "../auth/firebase";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -45,6 +46,7 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [url, setUrl] = useState("");
   const [name, setName] = useState("");
+  const history = useHistory();
 
   console.log({ email, password });
 
