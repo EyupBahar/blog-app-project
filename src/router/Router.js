@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import NavBar from "../components/NavBar";
 import Main from "../pages/Main";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
@@ -9,7 +9,7 @@ import Profile from "../pages/Profile";
 const AppRouter = () => {
   return (
     <Router>
-      <Navbar />
+      <NavBar />
       <Switch>
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
