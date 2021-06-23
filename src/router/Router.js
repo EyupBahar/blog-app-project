@@ -3,7 +3,7 @@ import NavBar from "../components/NavBar";
 import Main from "../pages/Main";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
-import Newblog from "../pages/Newblog";
+import Newblog from "../pages/NewBlog";
 import Profile from "../pages/Profile";
 
 const AppRouter = () => {
