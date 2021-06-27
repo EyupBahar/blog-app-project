@@ -47,7 +47,6 @@ const Newblog = () => {
     history.push("/");
     toastSuccessNotify("Newblog added successfully!");
   };
-
   return (
     <form
       className={classes.paper}

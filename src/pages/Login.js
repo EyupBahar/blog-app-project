@@ -11,6 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { SignIn, SignUpProvider } from "../auth/firebase";
 import { useHistory } from "react-router-dom";
+import google from "../assets/google.png"
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -27,12 +28,15 @@ const useStyles = makeStyles((theme) => ({
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
-  submit: {
+  submit_google: {
     margin: theme.spacing(3, 0, 2),
+    backgroundColor: "white",
+    color:"black",
   },
-  // main:{
-  //   backgroundImage:"https://picsum.photos/1200/900";
-  // }
+  img :{
+    paddingLeft: theme.spacing(2),
+    height: "20px",
+  }
 }));
 
 const Login = () => {
@@ -105,10 +109,10 @@ const Login = () => {
             fullWidth
             variant="contained"
             color="secondary"
-            className={classes.submit}
+            className={classes.submit_google}
             onClick={handleProvider}
-          >
-            Continue with Google
+            >
+            Continue with<img className={classes.img} src={google} alt="google" />
           </Button>
         </form>
       </div>
