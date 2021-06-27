@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import blog from "../assets/blog.png";
 import { addInfo } from "../auth/firebase";
 import { AuthContext } from "../context/AuthContext";
+import { toastSuccessNotify } from "../auth/Toastify.";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -44,6 +45,7 @@ const Newblog = () => {
     setImgUrl("");
     setContent("");
     history.push("/");
+    toastSuccessNotify("Newblog added successfully!");
   };
 
   return (
