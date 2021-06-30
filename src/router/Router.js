@@ -1,36 +1,44 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useState} from "react";
 import NavBar from "../components/NavBar";
 import Dashboard from "../pages/Dashboard";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import NewBlog from "../pages/NewBlog";
 import Profile from "../pages/Profile";
-import { ProtectedRoute } from "./PrivateRouter";
+import PrivateRouter from "./PrivateRouter";
 import Details from "../pages/Details";
 
-const AppRouter = () => {
-  return (
+function AppRouter() {
+  const [isAuth, setIsAuth] = useState(true);
+
+  const AuthContainer = () => (
     <div>
-      <Router>
-        <NavBar/>
-        <Switch>
-          <Route exact path="/" component={Dashboard} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/details/:id" component={Details} />
-          <ProtectedRoute
-            component={() => (
-              <>
-              <Route path="/profile" component={Profile} />
-              <Route path="/upload" component={NewBlog} />
-                {/* <Route path="/edit/:id" component={UpdateBlog} /> */}
-              </>
-            )}
-          ></ProtectedRoute>
-        </Switch>
-      </Router>
+      <PrivateRouter isAuth={isAuth} path="/details" component={Details} />
+      {/* <PrivateRouter path="/about" component={About} /> */}
+      <PrivateRouter path="/profile" component={Profile} />
+      <PrivateRouter path="/new-blog" component={NewBlog} />
+      {/* <PrivateRouter path="/update-blog/:id" component={UpdateBlog} /> */}
+      <PrivateRouter path="/detail/:id" exact component={Details} />
     </div>
   );
-};
+
+  return (
+    <Router>
+      <NavBar />
+      <Switch>
+        <Route
+          path="/login"
+          exact
+          component={() => <Login setIsAuth={setIsAuth} isAuth={isAuth} />}
+        />
+        <Route path="/" exact component={Dashboard} />
+        <Route path="/register" exact component={Register} />
+        {/* <Route path="/about" exact component={About} /> */}
+        <Route component={AuthContainer} />
+      </Switch>
+    </Router>
+  );
+}
 
 export default AppRouter;
