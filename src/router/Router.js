@@ -21,9 +21,9 @@ const AppRouter = () => {
           <ProtectedRoute
             component={() => (
               <>
-                <Route path="/profile" component={Profile} />
+              <Route path="/profile" component={Profile} />
+              <Route path="/upload" component={NewBlog} />
                 {/* <Route path="/edit/:id" component={UpdateBlog} /> */}
-                <Route path="/upload" component={NewBlog} />
               </>
             )}
           ></ProtectedRoute>
