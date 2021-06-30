@@ -44,8 +44,8 @@ const Newblog = () => {
     setTitle("");
     setImgUrl("");
     setContent("");
-    history.push("/");
     toastSuccessNotify("Newblog added successfully!");
+    history.push("/");
   };
   return (
     <form
