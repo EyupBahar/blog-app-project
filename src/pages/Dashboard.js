@@ -2,7 +2,7 @@ import React from "react";
 import PostCard from "../components/PostCard";
 import PostContainer from "../components/PostContainer";
 
-const Main = () => {
+const Dashboard = () => {
   return (
     <div>
       {/* <PostCard /> */}
@@ -11,4 +11,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Dashboard;
