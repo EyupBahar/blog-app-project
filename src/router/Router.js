@@ -1,23 +1,35 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "../components/NavBar";
-import Main from "../pages/Dashboard";
+import Dashboard from "../pages/Dashboard";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
-import Newblog from "../pages/NewBlog";
+import NewBlog from "../pages/NewBlog";
 import Profile from "../pages/Profile";
+import { ProtectedRoute } from "./PrivateRouter";
+import Details from "../pages/Details";
 
 const AppRouter = () => {
   return (
-    <Router>
-      <NavBar />
-      <Switch>
-        <Route path="/register" component={Register} />
-        <Route path="/login" component={Login} />
-        <Route exact path="/" component={Main} />
-        <Route path="/newblog" component={Newblog} />
-        <Route path="/profile" component={Profile} />
-      </Switch>
-    </Router>
+    <div>
+      <Router>
+        <NavBar/>
+        <Switch>
+          <Route exact path="/" component={Dashboard} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/details/:id" component={Details} />
+          <ProtectedRoute
+            component={() => (
+              <>
+                <Route path="/profile" component={Profile} />
+                {/* <Route path="/edit/:id" component={UpdateBlog} /> */}
+                <Route path="/upload" component={NewBlog} />
+              </>
+            )}
+          ></ProtectedRoute>
+        </Switch>
+      </Router>
+    </div>
   );
 };
 
