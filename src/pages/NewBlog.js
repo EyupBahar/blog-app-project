@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Newblog = () => {
+const NewBlog = () => {
   const classes = useStyles();
   const [title, setTitle] = useState();
   const [imgUrl, setImgUrl] = useState();
@@ -98,4 +98,4 @@ const Newblog = () => {
   );
 };
 
-export default Newblog;
+export default NewBlog;

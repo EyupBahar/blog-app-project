@@ -17,7 +17,7 @@ function AppRouter() {
       <PrivateRouter isAuth={isAuth} path="/details" component={Details} />
       {/* <PrivateRouter path="/about" component={About} /> */}
       <PrivateRouter path="/profile" component={Profile} />
-      <PrivateRouter path="/new-blog" component={NewBlog} />
+      <PrivateRouter path="/newBlog" component={NewBlog} />
       {/* <PrivateRouter path="/update-blog/:id" component={UpdateBlog} /> */}
       <PrivateRouter path="/detail/:id" exact component={Details} />
     </div>
