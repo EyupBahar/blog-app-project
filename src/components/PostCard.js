@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PostCard({ post }) {
   const classes = useStyles();
-  const { blogList, isLoading } = useFetch();
+  // const { blogList, isLoading } = useFetch();
 
   // const [expanded, setExpanded] = React.useState(false);
   console.log(post);
