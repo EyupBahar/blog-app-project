@@ -51,3 +51,27 @@ export default function PostCard({ post }) {
         </CardMedia>
         <div style={{ color: "white", fontWeight: "bold", fontSize: "30px" }}>
           {post.title}
+        </div>
+        <AccountCircleIcon
+          className={classes.user}
+          sx={{ bgcolor: red[500] }}
+          aria-label="recipe"
+        ></AccountCircleIcon>
+        {post.author}
+        <br />
+        <CardContent>
+          <Typography variant="body2" color="textSecondary"></Typography>
+          {post.content}
+        </CardContent>
+        <CardActions disableSpacing>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon style={{ color: "white" }} />
+          </IconButton>
+          <IconButton aria-label="share">
+            <ChatBubbleIcon style={{ color: "white" }} />
+          </IconButton>
+        </CardActions>
+      </Card>
+    </div>
+  );
+}
