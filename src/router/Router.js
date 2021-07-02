@@ -18,11 +18,10 @@ function AppRouter() {
       {/* <PrivateRouter path="/about" component={About} /> */}
       <PrivateRouter path="/profile" component={Profile} />
       <PrivateRouter path="/newBlog" component={NewBlog} />
-      {/* <PrivateRouter path="/update-blog/:id" component={UpdateBlog} /> */}
       <PrivateRouter path="/detail/:id" exact component={Details} />
+      {/* <PrivateRouter path="/update-blog/:id" component={UpdateBlog} /> */}
     </div>
   );
-
   return (
     <Router>
       <NavBar />
