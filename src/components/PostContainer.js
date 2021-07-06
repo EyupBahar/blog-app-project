@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { useFetch } from "../auth/firebase";
 import PostCard from "./PostCard";
@@ -20,8 +20,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const PostContainer = () => {
+
   const { blogList, isLoading } = useFetch();
   const classes = useStyles();
+
   return (
     <div>
       <h1 style={{ color: "purple" }}> DASHBOARD </h1>
