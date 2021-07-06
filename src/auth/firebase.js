@@ -84,6 +84,14 @@ export const addInfo = (info) => {
   blogRef.push(info);
 };
 
+export const getSingle = async (id, setPost) => {
+  const singleBlog = await firebase.database().ref("blog/" + id);
+  singleBlog.on('value', (snapshot) => {
+    const data = snapshot.val();
+    setPost(data);
+  });
+}
+
 export const useFetch = () => {
   const [blogList, setBlogList] = useState([{author:null}]);
   const [isLoading, setIsLoading] = useState(false);
