@@ -10,7 +10,10 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
 import { makeStyles } from "@material-ui/core/styles";
 import { useFetch } from "../auth/firebase";
+import { useContext } from "react";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import { useParams, useHistory } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,10 +35,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PostCard({ post }) {
+export default function Details({ post }) {
+  const { id } = useParams();
   const classes = useStyles();
   const { blogList, isLoading } = useFetch();
-  console.log(post);
+  const history = useHistory();
+
   return (
     <div>
       <Card className={classes.root} sx={{ maxWidth: 100 }}>
@@ -45,7 +50,7 @@ export default function PostCard({ post }) {
             paddingTop: "56.25%",
           }}
         >
-          <img className={classes.image} src={post.imgUrl} />
+          <img className={classes.image} src={post.imgUrl}/>
         </CardMedia>
         <div style={{ color: "white", fontWeight: "bold", fontSize: "30px" }}>
           {post.title}
