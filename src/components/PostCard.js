@@ -9,8 +9,11 @@ import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
 import { makeStyles } from "@material-ui/core/styles";
-import { useFetch } from "../auth/firebase";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import { useFetch } from "../auth/firebase";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,21 +36,31 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function PostCard({ post }) {
+  const { blogList, isLoading } = useFetch();
   const classes = useStyles();
-  // const { blogList, isLoading } = useFetch();
-
-  // const [expanded, setExpanded] = React.useState(false);
-  console.log(post);
+  const history = useHistory();
+  const currentUser = useContext(AuthContext);
+  
+  const handleDetails = (id) => {
+    if (!currentUser?.currentUser?.uid) {
+      alert("Please Login for Details!");
+    } else {
+      history.push({
+        pathname: `/details/${id}`
+      });
+    }
+  };
+  
   return (
     <div>
-      <Card className={classes.root} sx={{ maxWidth: 100 }}>
+      <Card onDoubleClick={() => handleDetails(post.id)} className={classes.root} sx={{ maxWidth: 100 }}>
         <CardMedia
           sx={{
             height: 0,
             paddingTop: "56.25%",
           }}
-        >
-          <img className={classes.image} src={post.imgUrl} />
+          >
+          <img className={classes.image} src={post.imgUrl} />    
         </CardMedia>
         <div style={{ color: "white", fontWeight: "bold", fontSize: "30px" }}>
           {post.title}
@@ -56,7 +69,7 @@ export default function PostCard({ post }) {
           className={classes.user}
           sx={{ bgcolor: red[500] }}
           aria-label="recipe"
-        ></AccountCircleIcon>
+          ></AccountCircleIcon>
         {post.author}
         <br />
         <CardContent>
