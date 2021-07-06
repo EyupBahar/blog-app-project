@@ -8,7 +8,6 @@ import PrivateRouter from "./PrivateRouter";
 import Details from "../pages/Details";
 import Login from "../pages/Login";
 
-
 function AppRouter() {
   return (
     <div>
