@@ -6,6 +6,8 @@ import NewBlog from "../pages/NewBlog";
 import Profile from "../pages/Profile";
 import PrivateRouter from "./PrivateRouter";
 import Details from "../pages/Details";
+import Login from "../pages/Login";
+
 
 function AppRouter() {
   return (
@@ -15,12 +17,13 @@ function AppRouter() {
       <Switch>
       <Route path="/" exact component={Dashboard} />
       <Route path="/register" exact component={Register} />
+      <Route path="/Login" exact component={Login} />
       <Route path="/detail/:id" exact component={Details} />
       <PrivateRouter 
           component={() => (
             <>
           <Route path="/profile" component={Profile} />
-          <Route path="/update-blog/:id" component={UpdateBlog} />
+          {/* <Route path="/update-blog/:id" component={UpdateBlog} /> */}
           <Route path="/newBlog" component={NewBlog} />
         </>
           )}
