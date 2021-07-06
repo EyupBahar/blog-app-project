@@ -7,6 +7,7 @@ import Profile from "../pages/Profile";
 import PrivateRouter from "./PrivateRouter";
 import Details from "../pages/Details";
 import Login from "../pages/Login";
+import UpdateBlog from "../pages/UpdateBlog";
 
 function AppRouter() {
   return (
@@ -22,7 +23,7 @@ function AppRouter() {
           component={() => (
             <>
           <Route path="/profile" component={Profile} />
-          {/* <Route path="/update-blog/:id" component={UpdateBlog} /> */}
+          <Route path="/update-blog/:id" component={UpdateBlog} />
           <Route path="/newBlog" component={NewBlog} />
         </>
           )}
