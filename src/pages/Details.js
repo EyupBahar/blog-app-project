@@ -9,17 +9,18 @@ import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
 import { makeStyles } from "@material-ui/core/styles";
-import { useFetch } from "../auth/firebase";
+import { getSingle, useFetch } from "../auth/firebase";
 import { useContext } from "react";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { useParams, useHistory } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import { useEffect } from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
-    margin: theme.spacing(5),
-    // margin: "0 auto",
+    marginTop: theme.spacing(2),
+    margin: "0 auto",
     backgroundColor: "#0B345B",
     borderRadius: "10px",
     color: "white",
@@ -37,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Details(props) {
-  const post = props.location.blogs;
+  const [post, setPost] = React.useState({title:"",author:"",imgUrl:"",content:""});
   const currentUser = useContext(AuthContext);
   if(post.author==currentUser.currentUser.email) console.log("content is editable");
   else console.log("this post is none of yours");
@@ -46,6 +47,10 @@ export default function Details(props) {
   const { blogList, isLoading } = useFetch();
   const history = useHistory();
 
+  useEffect(()=>{
+    getSingle(id, setPost);
+  }, []);
+  
   return (
     <div>
       <Card className={classes.root} sx={{ maxWidth: 100 }}>
