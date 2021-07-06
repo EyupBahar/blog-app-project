@@ -15,10 +15,11 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { useParams, useHistory } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { useEffect } from "react";
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    maxWidth:1000,
     marginTop: theme.spacing(2),
     margin: "0 auto",
     backgroundColor: "#0B345B",
@@ -35,17 +36,22 @@ const useStyles = makeStyles((theme) => ({
     height: 220,
     padding: 10,
   },
+  button: {
+    backgroundColor: "white",
+    marginBottom: theme.spacing(3),
+    color: "purple",
+    fontWeight: "bold",
+    fontSize: "18px",
+  }
 }));
 
-export default function Details(props) {
+export default function Details() {
   const [post, setPost] = React.useState({title:"",author:"",imgUrl:"",content:""});
   const currentUser = useContext(AuthContext);
   if(post.author==currentUser.currentUser.email) console.log("content is editable");
   else console.log("this post is none of yours");
   const { id } = useParams();
   const classes = useStyles();
-  const { blogList, isLoading } = useFetch();
-  const history = useHistory();
 
   useEffect(()=>{
     getSingle(id, setPost);
@@ -84,7 +90,8 @@ export default function Details(props) {
             <ChatBubbleIcon style={{ color: "white" }} />
           </IconButton>
         </CardActions>
+        <Button className={classes.button}variant="contained">Edit</Button>
       </Card>
     </div>
   );
-}
+} 
