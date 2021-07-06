@@ -16,9 +16,9 @@ function AppRouter() {
       <NavBar />
       <Switch>
       <Route path="/" exact component={Dashboard} />
-      <Route path="/register" exact component={Register} />
-      <Route path="/Login" exact component={Login} />
-      <Route path="/detail/:id" exact component={Details} />
+      <Route path="/register" component={Register} />
+      <Route path="/Login" component={Login} />
+      <Route path="/details/:id" component={Details} />
       <PrivateRouter 
           component={() => (
             <>

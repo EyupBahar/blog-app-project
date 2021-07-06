@@ -71,7 +71,7 @@ export default function PostCard({ post }) {
           sx={{ bgcolor: red[500] }}
           aria-label="recipe"
           ></AccountCircleIcon>
-        {post.author}
+          {post.author}
         <br />
         <CardContent>
           <Typography variant="body2" color="textSecondary"></Typography>

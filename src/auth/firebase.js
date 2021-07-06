@@ -85,7 +85,7 @@ export const addInfo = (info) => {
 };
 
 export const useFetch = () => {
-  const [blogList, setBlogList] = useState([]);
+  const [blogList, setBlogList] = useState([{author:null}]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {

@@ -18,7 +18,8 @@ import { AuthContext } from "../context/AuthContext";
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
-    margin: theme.spacing(1),
+    margin: theme.spacing(5),
+    // margin: "0 auto",
     backgroundColor: "#0B345B",
     borderRadius: "10px",
     color: "white",
@@ -35,7 +36,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Details({ post }) {
+export default function Details(props) {
+  const post = props.location.blogs;
+  const currentUser = useContext(AuthContext);
+  if(post.author==currentUser.currentUser.email) console.log("content is editable");
+  else console.log("this post is none of yours");
   const { id } = useParams();
   const classes = useStyles();
   const { blogList, isLoading } = useFetch();
