@@ -45,10 +45,7 @@ export default function PostCard({ post }) {
     if (!currentUser?.currentUser?.uid) {
       alert("Please Login for Details!");
     } else {
-      history.push({
-        pathname: `/details/${id}`,
-        blogs: post
-      });
+      history.push(`/details/${id}`);
     }
   };
   

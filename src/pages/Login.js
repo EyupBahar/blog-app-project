@@ -48,7 +48,6 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     SignIn(email, password, history);
-    // history.push("/");
   };
   const handleProvider = () => {
     SignUpProvider();
