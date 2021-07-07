@@ -46,6 +46,9 @@ const UpdateBlog = () => {
       content: content,
       author: currentUser.email,
     });
+    setTitle("");
+    setImgUrl("");
+    setContent("");
   };
 
   useEffect(() => {
@@ -57,7 +60,7 @@ const UpdateBlog = () => {
       className={classes.paper}
       noValidate
       autoComplete="off"
-      // onSubmit={handleForSubmit}
+      onSubmit={handleForSubmit}
     >
       <img src={blog} alt="blog" className={classes.img} />
       <br />
