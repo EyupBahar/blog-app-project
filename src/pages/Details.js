@@ -15,11 +15,11 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { useParams, useHistory } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { useEffect } from "react";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth:1000,
+    maxWidth: 1000,
     marginTop: theme.spacing(2),
     margin: "0 auto",
     backgroundColor: "#0B345B",
@@ -39,24 +39,39 @@ const useStyles = makeStyles((theme) => ({
   button: {
     backgroundColor: "white",
     marginBottom: theme.spacing(3),
-    color: "purple",
+    color: "#0B345B",
     fontWeight: "bold",
     fontSize: "18px",
-  }
+  },
 }));
 
 export default function Details() {
-  const [post, setPost] = React.useState({title:"",author:"",imgUrl:"",content:""});
+  const [post, setPost] = React.useState({
+    title: "",
+    author: "",
+    imgUrl: "",
+    content: "",
+  });
   const currentUser = useContext(AuthContext);
-  if(post.author==currentUser.currentUser.email) console.log("content is editable");
+  if (post.author == currentUser.currentUser.email)
+    console.log("content is editable");
   else console.log("this post is none of yours");
   const { id } = useParams();
+  const history = useHistory();
   const classes = useStyles();
 
-  useEffect(()=>{
+  const HandleEdit = () => {
+    if (!currentUser?.currentUser?.uid) {
+      alert("Please Login for Edit!");
+    } else {
+      history.push(`/update-blog/${id}`);
+    }
+  };
+
+  useEffect(() => {
     getSingle(id, setPost);
   }, []);
-  
+
   return (
     <div>
       <Card className={classes.root} sx={{ maxWidth: 100 }}>
@@ -66,7 +81,7 @@ export default function Details() {
             paddingTop: "56.25%",
           }}
         >
-          <img className={classes.image} src={post.imgUrl}/>
+          <img className={classes.image} src={post.imgUrl} />
         </CardMedia>
         <div style={{ color: "white", fontWeight: "bold", fontSize: "30px" }}>
           {post.title}
@@ -90,8 +105,14 @@ export default function Details() {
             <ChatBubbleIcon style={{ color: "white" }} />
           </IconButton>
         </CardActions>
-        <Button className={classes.button}variant="contained">Edit</Button>
+        <Button
+          onClick={HandleEdit}
+          className={classes.button}
+          variant="contained"
+        >
+          Edit
+        </Button>
       </Card>
     </div>
   );
-} 
+}
