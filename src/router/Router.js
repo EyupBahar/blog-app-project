@@ -19,11 +19,11 @@ function AppRouter() {
       <Route path="/register" component={Register} />
       <Route path="/Login" component={Login} />
       <Route path="/details/:id" component={Details} />
+      <Route path="/update-blog/:id" component={UpdateBlog} />
       <PrivateRouter 
           component={() => (
             <>
           <Route path="/profile" component={Profile} />
-          <Route path="/update-blog/:id" component={UpdateBlog} />
           <Route path="/newBlog" component={NewBlog} />
         </>
           )}

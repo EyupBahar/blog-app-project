@@ -56,13 +56,6 @@ export default function Register() {
 
   return (
     <Container component="main" maxWidth="xs">
-      {/* <button
-        onClick={() =>
-          createUser("ad@gmail.com", "1234567", "John Doe", "xxx", "sdasd")
-        }
-      >
-        test
-      </button> */}
       <CssBaseline />
       <div className={classes.paper}>
         <SaveOutlinedIcon className={classes.avatar}>
