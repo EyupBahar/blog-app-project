@@ -26,11 +26,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const NewBlog = () => {
+  const { currentUser } = useContext(AuthContext);
   const classes = useStyles();
   const [title, setTitle] = useState();
   const [imgUrl, setImgUrl] = useState();
   const [content, setContent] = useState();
-  const { currentUser } = useContext(AuthContext);
   const history = useHistory();
 
   const handleForSubmit = (e) => {

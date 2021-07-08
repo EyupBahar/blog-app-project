@@ -4,7 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import { useParams, useHistory } from "react-router";
 import Button from "@material-ui/core/Button";
 import blog from "../assets/blog.png";
-import { addInfo, getSingle } from "../auth/firebase";
+import { updateHandler, getSingle } from "../auth/firebase";
 import { AuthContext } from "../context/AuthContext";
 
 const useStyles = makeStyles((theme) => ({
@@ -33,22 +33,14 @@ const UpdateBlog = () => {
   });
   const { currentUser } = useContext(AuthContext);
   const classes = useStyles();
-  const [title, setTitle] = useState();
-  const [imgUrl, setImgUrl] = useState();
-  const [content, setContent] = useState();
   const { id } = useParams();
 
   const handleForSubmit = (e) => {
     e.preventDefault();
-    addInfo({
-      title: title,
-      imgUrl: imgUrl,
-      content: content,
-      author: currentUser.email,
-    });
-    setTitle("");
-    setImgUrl("");
-    setContent("");
+    post.id = id;
+    updateHandler(post);
+
+    console.log(post);
   };
 
   useEffect(() => {
@@ -65,30 +57,30 @@ const UpdateBlog = () => {
       <img src={blog} alt="blog" className={classes.img} />
       <br />
       <TextField
-        value={title}
+        value={post.title}
         placeholder="Title"
         id="standard-basic"
         label="Title"
         variant="outlined"
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={(e) => setPost({ ...post, title: e.target.value })}
       />
       <br />
       <TextField
-        value={imgUrl}
+        value={post.imgUrl}
         placeholder="Img URL"
         id="filled-basic"
         label="Image URL"
         variant="outlined"
-        onChange={(e) => setImgUrl(e.target.value)}
+        onChange={(e) => setPost({ ...post, imgUrl: e.target.value })}
       />
       <br />
       <TextField
-        value={content}
+        value={post.content}
         placeholder="Content"
         id="outlined-basic"
         label="Content "
         variant="outlined"
-        onChange={(e) => setContent(e.target.value)}
+        onChange={(e) => setPost({ ...post, content: e.target.value })}
       />
       <br />
       <Button
