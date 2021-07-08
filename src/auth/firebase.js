@@ -17,7 +17,7 @@ export const createUser = async (
   email,
   password,
   displayName,
-  photo,    
+  photo,
   history
 ) => {
   try {
@@ -84,16 +84,22 @@ export const addInfo = (info) => {
   blogRef.push(info);
 };
 
+export const updateHandler = (info) => {
+  console.log(info);
+  const updateBlogRef = firebase.database().ref("blog").child(info.id);
+  updateBlogRef.update(info);
+};
+
 export const getSingle = async (id, setPost) => {
   const singleBlog = await firebase.database().ref("blog/" + id);
-  singleBlog.on('value', (snapshot) => {
+  singleBlog.on("value", (snapshot) => {
     const data = snapshot.val();
     setPost(data);
   });
-}
+};
 
 export const useFetch = () => {
-  const [blogList, setBlogList] = useState([{author:null}]);
+  const [blogList, setBlogList] = useState([{ author: null }]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -110,6 +116,5 @@ export const useFetch = () => {
     });
   }, []);
   return { blogList, isLoading };
-  console.log("useFetch", blogList);
 };
 export default firebaseApp;
