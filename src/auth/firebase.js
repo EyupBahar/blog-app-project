@@ -45,11 +45,9 @@ export const SignIn = async (email, password, history) => {
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      // Signed in
       var user = userCredential.user;
       console.log("🚀 LOGIN USER", user);
       history.push("/");
-      // ...
     })
     .catch((error) => {
       var errorCode = error.code;
@@ -62,7 +60,6 @@ export const userObserver = async (setCurrentUser) => {
     if (user) {
       setCurrentUser(user);
     } else {
-      // User is signed out
       setCurrentUser(null);
     }
   });

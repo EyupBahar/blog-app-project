@@ -94,19 +94,13 @@ export default function NavBar() {
                 open={open}
                 onClose={handleClose}
               >
-                {/* <Link to="/profile"> */}
                 <MenuItem onClick={() => history.push("/profile")}>
                   Profile
                 </MenuItem>
-                {/* </Link> */}
-                {/* <Link to="/new-blog"> */}
                 <MenuItem onClick={() => history.push("/newBlog")}>
                   New
                 </MenuItem>
-                {/* </Link> */}
-                {/* <Link> */}
                 <MenuItem onClick={handleLogout}>Logout</MenuItem>
-                {/* </Link> */}
               </Menu>
             ) : (
               <Menu
