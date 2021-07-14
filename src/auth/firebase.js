@@ -5,13 +5,6 @@ import "firebase/firestore";
 import { useState, useEffect } from "react";
 
 const firebaseApp = firebase.initializeApp({
-  // apiKey: "AIzaSyCLgD5Rb4gMPZ4iXBFpTdGlvb-tBKpum68",
-  // authDomain: "blog-app-milestone.firebaseapp.com",
-  // projectId: "blog-app-milestone",
-  // databaseURL: "https://blog-app-milestone-default-rtdb.firebaseio.com",
-  // storageBucket: "blog-app-milestone.appspot.com",
-  // messagingSenderId: "577408861375",
-  // appId: "1:577408861375:web:c165ec047139f47620720a",
   apiKey: "AIzaSyBR0JwJUM21hHdUnQztLk6M3_dmMrm7QAg",
   authDomain: "blog-app-test-ae4ce.firebaseapp.com",
   projectId: "blog-app-test-ae4ce",
