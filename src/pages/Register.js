@@ -44,11 +44,6 @@ export default function Register() {
   const classes = useStyles();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [url, setUrl] = useState("");
-  const [name, setName] = useState("");
-  const history = useHistory();
-
-  console.log({ email, password });
 
   const handleRegister = () => {
     createUser(email, password);
