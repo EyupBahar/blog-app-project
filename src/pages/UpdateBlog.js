@@ -1,7 +1,7 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import { useParams, useHistory } from "react-router";
+import { useParams } from "react-router";
 import Button from "@material-ui/core/Button";
 import blog from "../assets/blog.png";
 import { updateHandler, getSingle } from "../auth/firebase";

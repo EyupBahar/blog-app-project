@@ -9,7 +9,7 @@ import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
 import { makeStyles } from "@material-ui/core/styles";
-import { getSingle, useFetch } from "../auth/firebase";
+import { getSingle } from "../auth/firebase";
 import { useContext } from "react";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { useParams, useHistory } from "react-router-dom";

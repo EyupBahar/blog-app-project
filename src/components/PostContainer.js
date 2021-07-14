@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { useFetch } from "../auth/firebase";
 import PostCard from "./PostCard";
