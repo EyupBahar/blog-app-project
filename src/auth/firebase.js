@@ -5,13 +5,21 @@ import "firebase/firestore";
 import { useState, useEffect } from "react";
 
 const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyCLgD5Rb4gMPZ4iXBFpTdGlvb-tBKpum68",
-  authDomain: "blog-app-milestone.firebaseapp.com",
-  projectId: "blog-app-milestone",
-  databaseURL: "https://blog-app-milestone-default-rtdb.firebaseio.com",
-  storageBucket: "blog-app-milestone.appspot.com",
-  messagingSenderId: "577408861375",
-  appId: "1:577408861375:web:c165ec047139f47620720a",
+  // apiKey: "AIzaSyCLgD5Rb4gMPZ4iXBFpTdGlvb-tBKpum68",
+  // authDomain: "blog-app-milestone.firebaseapp.com",
+  // projectId: "blog-app-milestone",
+  // databaseURL: "https://blog-app-milestone-default-rtdb.firebaseio.com",
+  // storageBucket: "blog-app-milestone.appspot.com",
+  // messagingSenderId: "577408861375",
+  // appId: "1:577408861375:web:c165ec047139f47620720a",
+  apiKey: "AIzaSyBR0JwJUM21hHdUnQztLk6M3_dmMrm7QAg",
+  authDomain: "blog-app-test-ae4ce.firebaseapp.com",
+  projectId: "blog-app-test-ae4ce",
+  storageBucket: "blog-app-test-ae4ce.appspot.com",
+  messagingSenderId: "115566828331",
+  appId: "1:115566828331:web:31793ddf32555b78b2836e",
+  measurementId: "G-J5FNNDWENR",
+  databaseURL: "https://blog-app-test-ae4ce-default-rtdb.firebaseio.com"
 });
 export const createUser = async (
   email,
@@ -26,7 +34,7 @@ export const createUser = async (
       .createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         var user = userCredential.user;
-        console.log("🚀 REGISTER USER", user);
+        // console.log("🚀 REGISTER USER", user);
         history.push("/");
       })
       .catch((error) => {

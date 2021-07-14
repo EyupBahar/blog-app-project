@@ -53,7 +53,7 @@ export default function Details() {
     content: "",
   });
   const currentUser = useContext(AuthContext);
-  if (post.author == currentUser.currentUser.email)
+  if (post.author === currentUser.currentUser.email)
     console.log("content is editable");
   else console.log("this post is none of yours");
   const { id } = useParams();
@@ -81,7 +81,7 @@ export default function Details() {
             paddingTop: "56.25%",
           }}
         >
-          <img className={classes.image} src={post.imgUrl} />
+          <img className={classes.image} src={post.imgUrl} alt="card_media"/>
         </CardMedia>
         <div style={{ color: "white", fontWeight: "bold", fontSize: "30px" }}>
           {post.title}
