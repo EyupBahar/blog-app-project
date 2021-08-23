@@ -5,14 +5,13 @@ import "firebase/firestore";
 import { useState, useEffect } from "react";
 
 const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyBR0JwJUM21hHdUnQztLk6M3_dmMrm7QAg",
-  authDomain: "blog-app-test-ae4ce.firebaseapp.com",
-  projectId: "blog-app-test-ae4ce",
-  storageBucket: "blog-app-test-ae4ce.appspot.com",
-  messagingSenderId: "115566828331",
-  appId: "1:115566828331:web:31793ddf32555b78b2836e",
-  measurementId: "G-J5FNNDWENR",
-  databaseURL: "https://blog-app-test-ae4ce-default-rtdb.firebaseio.com"
+  apiKey: "AIzaSyBFnYb55OOq-r8_d2M5_YYvNJbG7lzqfTc",
+    authDomain: "blog-app-d46be.firebaseapp.com",
+    databaseURL: "https://blog-app-d46be-default-rtdb.firebaseio.com",
+    projectId: "blog-app-d46be",
+    storageBucket: "blog-app-d46be.appspot.com",
+    messagingSenderId: "90388248819",
+    appId: "1:90388248819:web:a365a4b254033762b8df86"
 });
 export const createUser = async (
   email,
