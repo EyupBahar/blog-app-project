@@ -7,11 +7,13 @@ import { useState, useEffect } from "react";
 const firebaseApp = firebase.initializeApp({
   apiKey: "AIzaSyD1QzuRVroNS_VnNKqWkVPa58cns6rVFMA",
   authDomain: "fir-blog-app-ea4a7.firebaseapp.com",
+  databaseURL: "https://fir-blog-app-ea4a7-default-rtdb.firebaseio.com",
   projectId: "fir-blog-app-ea4a7",
   storageBucket: "fir-blog-app-ea4a7.appspot.com",
   messagingSenderId: "19278408890",
   appId: "1:19278408890:web:ca57b4178c0ec138e46683"
 });
+
 export const createUser = async (
   email,
   password,
