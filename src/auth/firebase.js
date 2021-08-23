@@ -6,12 +6,12 @@ import { useState, useEffect } from "react";
 
 const firebaseApp = firebase.initializeApp({
   apiKey: "AIzaSyBFnYb55OOq-r8_d2M5_YYvNJbG7lzqfTc",
-    authDomain: "blog-app-d46be.firebaseapp.com",
-    databaseURL: "https://blog-app-d46be-default-rtdb.firebaseio.com",
-    projectId: "blog-app-d46be",
-    storageBucket: "blog-app-d46be.appspot.com",
-    messagingSenderId: "90388248819",
-    appId: "1:90388248819:web:a365a4b254033762b8df86"
+  authDomain: "blog-app-d46be.firebaseapp.com",
+  databaseURL: "https://blog-app-d46be-default-rtdb.firebaseio.com",
+  projectId: "blog-app-d46be",
+  storageBucket: "blog-app-d46be.appspot.com",
+  messagingSenderId: "90388248819",
+  appId: "1:90388248819:web:a365a4b254033762b8df86"
 });
 export const createUser = async (
   email,
