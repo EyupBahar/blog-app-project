@@ -22,15 +22,17 @@ export const createUser = async (
   history
 ) => {
   try {
+    console.log("1",email, password)
     await firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         var user = userCredential.user;
-        // console.log("🚀 REGISTER USER", user);
+        console.log("2",userCredential);
         history.push("/");
       })
       .catch((error) => {
+        console.log("3",error)
         var errorCode = error.code;
         var errorMessage = error.message;
       });
