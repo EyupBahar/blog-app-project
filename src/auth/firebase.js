@@ -112,7 +112,9 @@ export const useFetch = () => {
         blogArray.push({ id, ...blogs[id] });
       }
       setBlogList(blogArray);
+      console.log("before setloading is false")
       setIsLoading(false);
+      
     });
   }, []);
   return { blogList, isLoading };
